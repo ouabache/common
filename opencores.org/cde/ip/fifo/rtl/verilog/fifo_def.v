@@ -210,7 +210,7 @@ cde_sram_dp
   #(.ADDR      (SIZE),
     .WIDTH     (WIDTH),
     .WORDS     (WORDS),
-    .WRITETHRU (1)
+    .WRITETHRU (0)
    )
 fifo
    (

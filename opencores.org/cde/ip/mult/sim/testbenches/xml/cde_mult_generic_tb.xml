@@ -29,10 +29,6 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
   <spirit:generatorExe>./tools/verilog/gen_verilog</spirit:generatorExe>
   <spirit:parameters>
     <spirit:parameter> 
-      <spirit:name>configuration</spirit:name>
-      <spirit:value>mult_generic_tb</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter> 
       <spirit:name>destination</spirit:name>
       <spirit:value>top.generic_tb</spirit:value>
     </spirit:parameter>

@@ -43,9 +43,9 @@
  module 
   io_probe_in 
     #( parameter 
+      IN_DELAY=5,
       MESG=" ",
-      WIDTH=1,
-      IN_DELAY=5)
+      WIDTH=1)
      (
  input   wire                 clk,
  input   wire    [ WIDTH-1 :  0]        expected_value,

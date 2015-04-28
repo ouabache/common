@@ -82,6 +82,56 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 
 
+<spirit:componentGenerators>
+
+
+
+<spirit:componentGenerator>
+  <spirit:name>elab_verilog</spirit:name>
+  <spirit:phase>103.0</spirit:phase>
+  <spirit:apiType>none</spirit:apiType>
+  <spirit:vendorExtensions><socgen:envIdentifier>:*Simulation:*</socgen:envIdentifier></spirit:vendorExtensions>
+  <spirit:generatorExe>./tools/verilog/elab_verilog</spirit:generatorExe>
+    <spirit:parameters>
+    <spirit:parameter> 
+      <spirit:name>dest_dir</spirit:name>
+      <spirit:value>io_ports</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+
+</spirit:componentGenerator>
+
+
+
+<spirit:componentGenerator>
+  <spirit:name>gen_design</spirit:name>
+  <spirit:phase>103.0</spirit:phase>
+  <spirit:apiType>none</spirit:apiType>
+  <spirit:vendorExtensions><socgen:envIdentifier>:*Simulation:*</socgen:envIdentifier></spirit:vendorExtensions>
+  <spirit:generatorExe>./tools/verilog/gen_design</spirit:generatorExe>
+    <spirit:parameters>
+    <spirit:parameter> 
+      <spirit:name>dest_dir</spirit:name>
+      <spirit:value>io_ports</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+
+</spirit:componentGenerator>
+
+
+</spirit:componentGenerators>
+
+
+
+
+
+
+
+
+
+
+
+
  <spirit:fileSets>
 
 

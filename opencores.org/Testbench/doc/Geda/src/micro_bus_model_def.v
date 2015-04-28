@@ -40,24 +40,33 @@
 /*  from http://www.opencores.org/lgpl.shtml                          */
 /*                                                                    */
 /**********************************************************************/
-module micro_bus_model_def
-#(parameter addr_width   = 16,
-  parameter OUT_DELAY    = 15,
-  parameter OUT_WIDTH    = 10
-  )
- (
-  input wire                  clk, 
-  input wire                  reset,
-  output reg [addr_width-1:0]           addr,
-  output reg [7:0]            wdata,
-  output reg                  rd,
-  output reg                  wr,
-  output reg                  cs,
-  inout  wire [7:0]           rdata
-);
-   reg [7:0]  exp_rdata;
-   reg [7:0]  mask_rdata;
-always@(posedge clk)
+ module 
+  micro_bus_model_def 
+    #( parameter 
+      OUT_DELAY=15,
+      OUT_WIDTH=10,
+      addr_width=16)
+     (
+ inout   wire    [ 7 :  0]        rdata,
+ input   wire                 clk,
+ input   wire                 reset,
+ output   reg                 cs,
+ output   reg                 rd,
+ output   reg                 wr,
+ output   reg    [ 7 :  0]        wdata,
+ output   reg    [ addr_width-1 :  0]        addr);
+reg     [ 7 :  0]              exp_rdata;
+reg     [ 7 :  0]              mask_rdata;
+io_probe_in
+#( .MESG ("micro rdata  Error"),
+   .WIDTH (8))
+rdata_tpb 
+   (
+    .clk      ( clk  ),
+    .expected_value      ( exp_rdata[7:0] ),
+    .mask      ( mask_rdata[7:0] ),
+    .signal      ( rdata[7:0] ));
+  always@(posedge clk)
   if(reset)
     begin
       addr  <= 16'h0000;
@@ -68,17 +77,6 @@ always@(posedge clk)
       exp_rdata    <=  8'h00;
       mask_rdata    <=  8'h00;       
    end
-io_probe_in 
- #(.MESG         ("micro rdata Error"),
-   .WIDTH        (8)
-  )
-rdata_tpb
-  (
-  .clk            (  clk        ),
-  .expected_value (  exp_rdata  ),
-  .mask           (  mask_rdata ),
-  .signal         (  rdata      )
-  );      
   // Tasks
 task automatic next;
   input [31:0] num;
@@ -134,4 +132,4 @@ endtask // next
       rd         <= 1'b0;
    end
   endtask
-endmodule
+  endmodule

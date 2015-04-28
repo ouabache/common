@@ -50,7 +50,6 @@
  input   wire    [ 1 :  0]        blue,
  input   wire    [ 2 :  0]        green,
  input   wire    [ 2 :  0]        red);
-////////////////////////////////////////////////////////////////
 reg [23:0] red_h_cnt;
 reg [23:0] green_h_cnt;
 reg [23:0] blue_h_cnt;

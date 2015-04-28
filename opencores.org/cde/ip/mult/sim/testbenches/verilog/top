@@ -10,6 +10,8 @@ reg   mask_R;
 
 
 
+assign   mul_prod_exp_P =  mul_prod_exp_R;
+
 assign a_in       = a_in_R;
 assign b_in       = b_in_R;
 assign alu_op_mul = alu_op_mul_R;
@@ -17,18 +19,8 @@ assign ex_freeze  = ex_freeze_R;
 
 
 
+assign   mask =  {32{mask_R}};
 
-io_probe_in 
- #(.MESG         ("multiply error"),
-   .WIDTH        (32)
-  )
-rdata_tpb
-  (
-  .clk            (  clk        ),
-  .expected_value (  mul_prod_exp_R[31:0]  ),
-  .mask           (  {32{mask_R}} ),
-  .signal         (  mul_prod_r[31:0]      )
-  );      
 
 `ifndef SYNTHESYS
 

@@ -10,11 +10,7 @@ reg              rx_parity_calc;
 reg              rx_parity_samp;
 reg              rx_parity_error;
 reg              rx_frame_err;
-reg [7:0]        exp_rx_shift_buffer;   
-reg              exp_rx_parity_err;      
 reg              exp_rx_frame_err;
-reg [7:0]        mask_rx_shift_buffer;   
-reg              mask_rx_parity_err;      
 reg              mask_rx_frame_err;
    
    
@@ -77,15 +73,16 @@ always@(posedge clk)
 
    
 
-wire  [7:0]  prb_rx_shift_buffer;  
+
 wire    prb_rx_frame_err; 
-wire    prb_rx_parity_err;
 
 assign  prb_rx_shift_buffer =  rx_shift_buffer;  
 assign  prb_rx_frame_err    =  rx_frame_err; 
 assign  prb_rx_parity_err   =  rx_parity_error;    
+assign  drv_rx_shift_buffer =  8'bzzzzzzzz;
+assign  drv_rx_parity_err   =  1'bz;
 
-
+/*
 io_probe_def 
 #(.MESG   ("uart data receive error"),
   .WIDTH  (8)
@@ -93,10 +90,10 @@ io_probe_def
 rx_shift_buffer_prb   
 (
   .clk           ( clk ),
-  .drive_value   (8'bzzzzzzzz), 
-  .expected_value( exp_rx_shift_buffer),
+  .drive_value   ( drv_rx_shift_buffer ), 
+  .expected_value( exp_rx_shift_buffer ),
   .mask          ( mask_rx_shift_buffer),
-  .signal        ( prb_rx_shift_buffer)
+  .signal        ( prb_rx_shift_buffer )
 );      
 
 
@@ -105,13 +102,13 @@ io_probe_def
 rx_parity_err_prb   
 (
   .clk           ( clk ),
-  .drive_value   (1'bz), 
-  .expected_value( exp_rx_parity_err),
+  .drive_value   ( drv_rx_parity_err ), 
+  .expected_value( exp_rx_parity_err ),
   .mask          ( mask_rx_parity_err),
-  .signal        ( prb_rx_parity_err)
+  .signal        ( prb_rx_parity_err )
 );      
 
-
+*/
 
 
  

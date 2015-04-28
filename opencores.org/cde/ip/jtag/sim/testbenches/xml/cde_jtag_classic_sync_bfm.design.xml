@@ -21,7 +21,8 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
        <spirit:name>clk</spirit:name>
        <spirit:externalPortReference spirit:portRef="clk"/>
        <spirit:internalPortReference spirit:componentRef="jtag_model"   spirit:portRef="clk"/>
-       <spirit:internalPortReference spirit:componentRef="sync"   spirit:portRef="clk"/>
+       <spirit:internalPortReference spirit:componentRef="sync"         spirit:portRef="clk"/>
+       <spirit:internalPortReference spirit:componentRef="aux_sync"     spirit:portRef="clk"/>
      </spirit:adHocConnection>
 
      <spirit:adHocConnection>
@@ -71,6 +72,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 <spirit:name>shiftcapture_dr_clk_o</spirit:name>
        <spirit:externalPortReference spirit:portRef="shiftcapture_dr_clk_o"   />
        <spirit:internalPortReference spirit:componentRef="sync"   spirit:portRef="shiftcapture_dr_clk"/>
+       <spirit:internalPortReference spirit:componentRef="aux_sync"   spirit:portRef="shiftcapture_dr_clk"/>
        <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="shiftcapture_dr_clk" />
 </spirit:adHocConnection>
 
@@ -84,9 +86,9 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 <spirit:adHocConnection>
 <spirit:name>capture_dr_o</spirit:name>
        <spirit:externalPortReference spirit:portRef="capture_dr_o"/>
-
-<spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="capture_dr" />
+       <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="capture_dr" />
        <spirit:internalPortReference spirit:componentRef="sync"   spirit:portRef="capture_dr"/>
+       <spirit:internalPortReference spirit:componentRef="aux_sync"   spirit:portRef="capture_dr"/>
 </spirit:adHocConnection>
 
 
@@ -99,6 +101,13 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 <spirit:name>select_o</spirit:name>
        <spirit:externalPortReference spirit:portRef="select_o"  />
        <spirit:internalPortReference spirit:componentRef="sync"   spirit:portRef="select"/>
+</spirit:adHocConnection>
+
+
+<spirit:adHocConnection>
+<spirit:name>aux_select_o</spirit:name>
+       <spirit:externalPortReference spirit:portRef="aux_select_o"  />
+       <spirit:internalPortReference spirit:componentRef="aux_sync"   spirit:portRef="select"/>
 </spirit:adHocConnection>
 
 
@@ -118,6 +127,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 <spirit:name>shift_dr_o</spirit:name>
        <spirit:externalPortReference spirit:portRef="shift_dr_o"/>
 <spirit:internalPortReference spirit:componentRef="sync"   spirit:portRef="shift_dr"/>
+<spirit:internalPortReference spirit:componentRef="aux_sync"   spirit:portRef="shift_dr"/>
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="shift_dr" />
 </spirit:adHocConnection>
 
@@ -127,6 +137,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
        <spirit:externalPortReference spirit:portRef="tdi_o"/>
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="tdi" />
 <spirit:internalPortReference  spirit:componentRef="sync" spirit:portRef="tdi" />
+<spirit:internalPortReference  spirit:componentRef="aux_sync" spirit:portRef="tdi" />
 </spirit:adHocConnection>
 
 
@@ -137,16 +148,23 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 </spirit:adHocConnection>
 
 
+<spirit:adHocConnection>
+<spirit:name>aux_tdo_i</spirit:name>
+<spirit:externalPortReference spirit:portRef="aux_tdo_i"/>
+<spirit:internalPortReference  spirit:componentRef="aux_sync" spirit:portRef="tdo" />
+</spirit:adHocConnection>
+
+
 
 <spirit:adHocConnection>
 <spirit:name>syn_tdo_i</spirit:name>
-       <spirit:externalPortReference spirit:portRef="syn_tdo_i" spirit:left="0" spirit:right="0" />
+       <spirit:externalPortReference spirit:portRef="syn_tdo_i"  />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="tdo" />
 </spirit:adHocConnection>
 
 <spirit:adHocConnection>
-<spirit:name>syn_tdo_i</spirit:name>
-       <spirit:externalPortReference spirit:portRef="syn_tdo_i" spirit:left="1" spirit:right="1" />
+<spirit:name>aux_syn_tdo_i</spirit:name>
+       <spirit:externalPortReference spirit:portRef="aux_syn_tdo_i" />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="tdo" />
 </spirit:adHocConnection>
 
@@ -165,6 +183,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="reset" />
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="test_logic_reset" />
 <spirit:internalPortReference  spirit:componentRef="sync" spirit:portRef="test_logic_reset" />
+<spirit:internalPortReference  spirit:componentRef="aux_sync" spirit:portRef="test_logic_reset" />
 </spirit:adHocConnection>
 
 <spirit:adHocConnection>
@@ -172,6 +191,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
        <spirit:externalPortReference spirit:portRef="update_dr_clk_o"/>
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="update_dr_clk" />
 <spirit:internalPortReference  spirit:componentRef="sync" spirit:portRef="update_dr_clk" />
+<spirit:internalPortReference  spirit:componentRef="aux_sync" spirit:portRef="update_dr_clk" />
 </spirit:adHocConnection>
 
 
@@ -205,6 +225,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 <spirit:name>syn_capture_dr</spirit:name>
 <spirit:externalPortReference spirit:portRef="syn_capture_dr"/>
 <spirit:internalPortReference  spirit:componentRef="sync" spirit:portRef="syn_capture_dr" />
+<spirit:internalPortReference  spirit:componentRef="aux_sync" spirit:portRef="syn_capture_dr" />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="capture_dr" />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="capture_dr" />
 </spirit:adHocConnection>
@@ -214,6 +235,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 <spirit:name>syn_clk</spirit:name>
 <spirit:externalPortReference spirit:portRef="syn_clk"/>
 <spirit:internalPortReference  spirit:componentRef="sync" spirit:portRef="syn_clk" />
+<spirit:internalPortReference  spirit:componentRef="aux_sync" spirit:portRef="syn_clk" />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="clk" />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="clk" />
 </spirit:adHocConnection>
@@ -221,21 +243,27 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:adHocConnection>
 <spirit:name>syn_select</spirit:name>
-<spirit:externalPortReference spirit:portRef="syn_select" spirit:left="1" spirit:right="0"  />
+<spirit:externalPortReference spirit:portRef="syn_select"/>
 <spirit:internalPortReference  spirit:componentRef="sync" spirit:portRef="syn_select" />
+</spirit:adHocConnection>
+
+<spirit:adHocConnection>
+<spirit:name>aux_syn_select</spirit:name>
+<spirit:externalPortReference spirit:portRef="aux_syn_select"/>
+<spirit:internalPortReference  spirit:componentRef="aux_sync" spirit:portRef="syn_select" />
 </spirit:adHocConnection>
 
 
 <spirit:adHocConnection>
 <spirit:name>syn_select</spirit:name>
-<spirit:externalPortReference spirit:portRef="syn_select" spirit:left="0" spirit:right="0"  />
+<spirit:externalPortReference spirit:portRef="syn_select"  />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="select" />
 </spirit:adHocConnection>
 
 
 <spirit:adHocConnection>
-<spirit:name>syn_select</spirit:name>
-       <spirit:externalPortReference spirit:portRef="syn_select" spirit:left="1" spirit:right="1" />
+<spirit:name>aux_syn_select</spirit:name>
+       <spirit:externalPortReference spirit:portRef="aux_syn_select"  />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="select" />
 </spirit:adHocConnection>
 
@@ -244,6 +272,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 <spirit:name>syn_shift_dr</spirit:name>
 <spirit:externalPortReference spirit:portRef="syn_shift_dr"/>
 <spirit:internalPortReference  spirit:componentRef="sync" spirit:portRef="syn_shift_dr" />
+<spirit:internalPortReference  spirit:componentRef="aux_sync" spirit:portRef="syn_shift_dr" />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="shift_dr" />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="shift_dr" />
 </spirit:adHocConnection>
@@ -253,6 +282,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 <spirit:name>syn_update_dr</spirit:name>
 <spirit:externalPortReference spirit:portRef="syn_update_dr"/>
 <spirit:internalPortReference  spirit:componentRef="sync" spirit:portRef="syn_update_dr" />
+<spirit:internalPortReference  spirit:componentRef="aux_sync" spirit:portRef="syn_update_dr" />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="update_dr" />
 
 </spirit:adHocConnection>
@@ -266,10 +296,27 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 
 <spirit:adHocConnection>
+<spirit:name>aux_syn_tdo_i</spirit:name>
+<spirit:externalPortReference spirit:portRef="aux_syn_tdo_i"/>
+<spirit:internalPortReference  spirit:componentRef="aux_sync" spirit:portRef="syn_tdo_i" />
+</spirit:adHocConnection>
+
+
+
+
+<spirit:adHocConnection>
 <spirit:name>syn_tdi_o</spirit:name>
 <spirit:externalPortReference spirit:portRef="syn_tdi_o"/>
 <spirit:internalPortReference  spirit:componentRef="sync" spirit:portRef="syn_tdi_o" />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="tdi" />
+</spirit:adHocConnection>
+
+
+
+<spirit:adHocConnection>
+<spirit:name>aux_syn_tdi_o</spirit:name>
+<spirit:externalPortReference spirit:portRef="aux_syn_tdi_o"/>
+<spirit:internalPortReference  spirit:componentRef="aux_sync" spirit:portRef="syn_tdi_o" />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="tdi" />
 
 </spirit:adHocConnection>
@@ -323,9 +370,11 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:componentInstance>
  <spirit:instanceName>sync</spirit:instanceName> <spirit:componentRef spirit:vendor="opencores.org" spirit:library="cde" spirit:name="jtag" spirit:version="classic_sync" />
- <spirit:configurableElementValues>
- <spirit:configurableElementValue spirit:referenceId="JTAG_SEL">2</spirit:configurableElementValue>
-</spirit:configurableElementValues>
+</spirit:componentInstance>
+
+
+<spirit:componentInstance>
+ <spirit:instanceName>aux_sync</spirit:instanceName> <spirit:componentRef spirit:vendor="opencores.org" spirit:library="cde" spirit:name="jtag" spirit:version="classic_sync" />
 </spirit:componentInstance>
 
 

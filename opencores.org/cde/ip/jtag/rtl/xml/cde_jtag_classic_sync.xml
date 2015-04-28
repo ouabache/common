@@ -52,7 +52,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
       <spirit:portMap>
         <spirit:logicalPort><spirit:name>tdo</spirit:name></spirit:logicalPort>
         <spirit:physicalPort><spirit:name>tdo</spirit:name>
-     <spirit:wire><spirit:vector><spirit:left>JTAG_SEL-1</spirit:left><spirit:right>0</spirit:right></spirit:vector></spirit:wire>
+     <spirit:wire></spirit:wire>
       </spirit:physicalPort>
       </spirit:portMap>
 
@@ -118,7 +118,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
       <spirit:portMap>
         <spirit:logicalPort><spirit:name>tdo</spirit:name></spirit:logicalPort>
         <spirit:physicalPort><spirit:name>syn_tdo_i</spirit:name>
-        <spirit:wire><spirit:vector><spirit:left>JTAG_SEL-1</spirit:left><spirit:right>0</spirit:right></spirit:vector></spirit:wire>
+        <spirit:wire></spirit:wire>
      </spirit:physicalPort>
       </spirit:portMap>
 
@@ -183,9 +183,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 
 
-<spirit:modelParameters>
-<spirit:modelParameter><spirit:name>JTAG_SEL</spirit:name><spirit:value>1</spirit:value></spirit:modelParameter>
-</spirit:modelParameters>
+
 
 <spirit:ports>
 

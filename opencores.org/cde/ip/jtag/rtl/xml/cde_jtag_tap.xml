@@ -66,7 +66,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
       <spirit:logicalPort><spirit:name>tdo</spirit:name>
       </spirit:logicalPort>
       <spirit:physicalPort><spirit:name>tdo_i</spirit:name>
-      <spirit:wire><spirit:vector><spirit:left>JTAG_SEL-1</spirit:left><spirit:right>0</spirit:right></spirit:vector></spirit:wire>
+      <spirit:wire></spirit:wire>
       </spirit:physicalPort>
       </spirit:portMap>
 
@@ -74,7 +74,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
       <spirit:logicalPort><spirit:name>select</spirit:name>
       </spirit:logicalPort>
       <spirit:physicalPort><spirit:name>select_o</spirit:name>
-      <spirit:wire><spirit:vector><spirit:left>JTAG_SEL-1</spirit:left><spirit:right>0</spirit:right></spirit:vector></spirit:wire>
+      <spirit:wire></spirit:wire>
       </spirit:physicalPort>
       </spirit:portMap>
 
@@ -82,6 +82,76 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
       <spirit:logicalPort><spirit:name>shiftcapture_dr_clk</spirit:name>
       </spirit:logicalPort>
       <spirit:physicalPort><spirit:name>shiftcapture_dr_clk_o</spirit:name>
+      <spirit:wire></spirit:wire>
+      </spirit:physicalPort>
+      </spirit:portMap>
+
+    </spirit:portMaps>
+ </spirit:busInterface>
+
+
+ <spirit:busInterface><spirit:name>aux_jtag</spirit:name>
+  <spirit:abstractionType spirit:vendor="opencores.org" spirit:library="cde" spirit:name="jtag" spirit:version="rpc_classic_rtl"/>
+  <spirit:master/>
+    <spirit:portMaps>
+
+      <spirit:portMap>
+        <spirit:logicalPort><spirit:name>test_logic_reset</spirit:name></spirit:logicalPort>
+        <spirit:physicalPort><spirit:name>aux_test_logic_reset_o</spirit:name>
+        <spirit:wireTypeDefs><spirit:wireTypeDef><spirit:typeName>wire</spirit:typeName></spirit:wireTypeDef></spirit:wireTypeDefs>
+        </spirit:physicalPort>
+      </spirit:portMap>
+
+      <spirit:portMap>
+        <spirit:logicalPort><spirit:name>capture_dr</spirit:name></spirit:logicalPort>
+        <spirit:physicalPort>
+        <spirit:name>aux_capture_dr_o</spirit:name>
+        <spirit:wireTypeDefs><spirit:wireTypeDef><spirit:typeName>wire</spirit:typeName></spirit:wireTypeDef></spirit:wireTypeDefs>
+        </spirit:physicalPort>
+      </spirit:portMap>
+
+      <spirit:portMap>
+        <spirit:logicalPort><spirit:name>shift_dr</spirit:name></spirit:logicalPort>
+        <spirit:physicalPort>
+        <spirit:name>aux_shift_dr_o</spirit:name>
+        <spirit:wireTypeDefs><spirit:wireTypeDef><spirit:typeName>wire</spirit:typeName></spirit:wireTypeDef></spirit:wireTypeDefs>
+        </spirit:physicalPort>
+      </spirit:portMap>
+
+      <spirit:portMap>
+        <spirit:logicalPort><spirit:name>update_dr_clk</spirit:name></spirit:logicalPort>
+        <spirit:physicalPort><spirit:name>aux_update_dr_clk_o</spirit:name>
+        <spirit:wireTypeDefs><spirit:wireTypeDef><spirit:typeName>wire</spirit:typeName></spirit:wireTypeDef></spirit:wireTypeDefs>
+       </spirit:physicalPort>
+      </spirit:portMap>
+
+      <spirit:portMap>
+        <spirit:logicalPort><spirit:name>tdi</spirit:name></spirit:logicalPort>
+        <spirit:physicalPort><spirit:name>aux_tdi_o</spirit:name>
+       <spirit:wireTypeDefs><spirit:wireTypeDef><spirit:typeName>wire</spirit:typeName></spirit:wireTypeDef></spirit:wireTypeDefs>
+      </spirit:physicalPort>
+      </spirit:portMap>
+
+      <spirit:portMap>
+      <spirit:logicalPort><spirit:name>tdo</spirit:name>
+      </spirit:logicalPort>
+      <spirit:physicalPort><spirit:name>aux_tdo_i</spirit:name>
+      <spirit:wire></spirit:wire>
+      </spirit:physicalPort>
+      </spirit:portMap>
+
+      <spirit:portMap>
+      <spirit:logicalPort><spirit:name>select</spirit:name>
+      </spirit:logicalPort>
+      <spirit:physicalPort><spirit:name>aux_select_o</spirit:name>
+      <spirit:wire></spirit:wire>
+      </spirit:physicalPort>
+      </spirit:portMap>
+
+      <spirit:portMap>
+      <spirit:logicalPort><spirit:name>shiftcapture_dr_clk</spirit:name>
+      </spirit:logicalPort>
+      <spirit:physicalPort><spirit:name>aux_shiftcapture_dr_clk_o</spirit:name>
       <spirit:wire></spirit:wire>
       </spirit:physicalPort>
       </spirit:portMap>
@@ -290,7 +360,6 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 
 <spirit:modelParameters>
-<spirit:modelParameter><spirit:name>JTAG_SEL</spirit:name><spirit:value>2</spirit:value></spirit:modelParameter>
 <spirit:modelParameter><spirit:name>INST_LENGTH</spirit:name><spirit:value>4</spirit:value></spirit:modelParameter>
 <spirit:modelParameter><spirit:name>INST_RETURN</spirit:name><spirit:value>4'b1101</spirit:value></spirit:modelParameter>
 <spirit:modelParameter><spirit:name>INST_RESET</spirit:name><spirit:value>4'b1111</spirit:value></spirit:modelParameter>

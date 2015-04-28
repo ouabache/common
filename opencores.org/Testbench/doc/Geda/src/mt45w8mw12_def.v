@@ -44,9 +44,7 @@ module mt45w8mw12_def
 #(
     parameter ADDR_BITS      = 23,   
     parameter DQ_BITS        = 16,
-    parameter MEM_BITS       = 16,
-    parameter INIT_FILE_E   = "NONE", 
-    parameter INIT_FILE_O   = "NONE" 
+    parameter MEM_BITS       = 16
   )
 (
     input  wire                       clk,
@@ -64,21 +62,6 @@ module mt45w8mw12_def
 reg [7:0] 		      memoryl [1<<MEM_BITS-1:0];
 reg [7:0] 		      memoryu [1<<MEM_BITS-1:0];   
 reg [DQ_BITS-1 : 0]           dq_out;
-// Load any rom images
-initial 
-  begin
-   if( INIT_FILE_E == "NONE")
-     begin
-     end
-   else 	$readmemh(INIT_FILE_E, memoryl);
-  end
-initial 
-  begin
-   if( INIT_FILE_O == "NONE")
-     begin
-     end
-   else 	$readmemh(INIT_FILE_O, memoryu);
-  end
 // Write Memory  
 always@(*)      
 if(!ce_n && !we_n && !lb_n)  memoryl[addr]  =  dq[7:0];

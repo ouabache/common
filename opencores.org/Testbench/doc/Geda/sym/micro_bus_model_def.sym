@@ -28,7 +28,7 @@ pinseq=3
 P 3200 400 3500 400 10 1 1
 {
 T 3100 400 5  10 1 1 0 7 1 1 
-pinnumber=addr[ADDR_WIDTH-1:0]
+pinnumber=addr[addr_width-1:0]
 T 3100 400 5  10 0 1 0 7 1 1 
 pinseq=4
 }

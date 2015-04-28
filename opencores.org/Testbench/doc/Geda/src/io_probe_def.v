@@ -43,12 +43,12 @@
  module 
   io_probe_def 
     #( parameter 
-      MESG=" ",
-      WIDTH=1,
-      RESET={WIDTH{1'bz}},
       IN_DELAY=5,
+      MESG=" ",
       OUT_DELAY=15,
-      OUT_WIDTH=10)
+      OUT_WIDTH=10,
+      RESET={WIDTH{1'bz}},
+      WIDTH=1)
      (
  inout   wire    [ WIDTH-1 :  0]        signal,
  input   wire                 clk,

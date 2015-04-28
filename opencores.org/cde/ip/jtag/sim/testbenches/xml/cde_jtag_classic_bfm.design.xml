@@ -94,14 +94,14 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:adHocConnection>
 <spirit:name>select_o</spirit:name>
-<spirit:externalPortReference spirit:portRef="select_o" spirit:left="0" spirit:right="0"  />
+<spirit:externalPortReference spirit:portRef="select_o"   />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="select" />
 </spirit:adHocConnection>
 
 
 <spirit:adHocConnection>
-<spirit:name>select_o</spirit:name>
-       <spirit:externalPortReference spirit:portRef="select_o" spirit:left="1" spirit:right="1" />
+<spirit:name>aux_select_o</spirit:name>
+       <spirit:externalPortReference spirit:portRef="aux_select_o"  />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="select" />
 </spirit:adHocConnection>
 
@@ -133,13 +133,13 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:adHocConnection>
 <spirit:name>tdo_i</spirit:name>
-       <spirit:externalPortReference spirit:portRef="tdo_i" spirit:left="0" spirit:right="0" />
+       <spirit:externalPortReference spirit:portRef="tdo_i"  />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="tdo" />
 </spirit:adHocConnection>
 
 <spirit:adHocConnection>
-<spirit:name>tdo_i</spirit:name>
-       <spirit:externalPortReference spirit:portRef="tdo_i" spirit:left="1" spirit:right="1" />
+<spirit:name>aux_tdo_i</spirit:name>
+       <spirit:externalPortReference spirit:portRef="aux_tdo_i"  />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="tdo" />
 </spirit:adHocConnection>
 

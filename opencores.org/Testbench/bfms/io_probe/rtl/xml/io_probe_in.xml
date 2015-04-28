@@ -47,6 +47,26 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:componentGenerators>
 
+
+
+<spirit:componentGenerator>
+  <spirit:name>elab_verilog</spirit:name>
+  <spirit:phase>103.0</spirit:phase>
+  <spirit:apiType>none</spirit:apiType>
+  <spirit:vendorExtensions><socgen:envIdentifier>:*Simulation:*</socgen:envIdentifier></spirit:vendorExtensions>
+  <spirit:generatorExe>./tools/verilog/elab_verilog</spirit:generatorExe>
+    <spirit:parameters>
+    <spirit:parameter> 
+      <spirit:name>dest_dir</spirit:name>
+      <spirit:value>io_ports</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+</spirit:componentGenerator>
+
+
+
+
+
 <spirit:componentGenerator>
   <spirit:name>gen_verilog_sim</spirit:name>
   <spirit:phase>104.0</spirit:phase>
@@ -56,7 +76,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
     <spirit:parameters>
     <spirit:parameter> 
       <spirit:name>destination</spirit:name>
-      <spirit:value>top.out.sim</spirit:value>
+      <spirit:value>top.in.sim</spirit:value>
     </spirit:parameter>
     <spirit:parameter> 
       <spirit:name>dest_dir</spirit:name>
@@ -74,7 +94,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
     <spirit:parameters>
     <spirit:parameter> 
       <spirit:name>destination</spirit:name>
-      <spirit:value>top.out.syn</spirit:value>
+      <spirit:value>top.in.syn</spirit:value>
     </spirit:parameter>
     <spirit:parameter> 
       <spirit:name>dest_dir</spirit:name>
@@ -138,7 +158,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
       <spirit:file>
         <spirit:logicalName></spirit:logicalName>
-        <spirit:name>../verilog/sim/top.out.sim</spirit:name>
+        <spirit:name>../verilog/sim/top.in.sim</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType><spirit:userFileType>module</spirit:userFileType>
       </spirit:file>
 
@@ -172,7 +192,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
       <spirit:file>
         <spirit:logicalName></spirit:logicalName>
-        <spirit:name>../verilog/syn/top.out.syn</spirit:name>
+        <spirit:name>../verilog/syn/top.in.syn</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType><spirit:userFileType>module</spirit:userFileType>
       </spirit:file>
 

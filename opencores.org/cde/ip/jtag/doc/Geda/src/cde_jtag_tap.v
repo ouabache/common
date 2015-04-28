@@ -21,7 +21,6 @@
  module 
   cde_jtag_tap 
     #( parameter 
-      JTAG_SEL=2,
       INST_LENGTH=4,
       INST_RETURN=4'b1101,
       INST_RESET=4'b1111,
@@ -46,16 +45,26 @@
  output   wire                 jtag_clk,
  output   wire                 update_dr_clk_o,
  output   wire                 shiftcapture_dr_clk_o,
+ output   wire                 aux_jtag_clk,
+ output   wire                 aux_update_dr_clk_o,
+ output   wire                 aux_shiftcapture_dr_clk_o,
  output   reg                  test_logic_reset_o,
+ output   wire                 aux_test_logic_reset_o,
  output   wire                 tdi_o,
- input   wire    [ NUM_USER-1 :  0]     tdo_i,
+ output   wire                 aux_tdi_o,
+ input   wire                  tdo_i,
+ input   wire                  aux_tdo_i,
  input   wire                  bsr_tdo_i,
  output   reg                  capture_dr_o,
  output   reg                  shift_dr_o,
  output   reg                  update_dr_o,
+ output   wire                 aux_capture_dr_o,
+ output   wire                 aux_shift_dr_o,
+ output   wire                 aux_update_dr_o,
  output   reg                  tap_highz_mode,
  output   reg                  bsr_output_mode,
- output   wire    [ NUM_USER-1 :  0]        select_o,
+ output   wire                 select_o,
+ output   wire                 aux_select_o,
  output   wire                    bsr_select_o
 );
 reg                        bypass_tdo;
@@ -76,6 +85,14 @@ wire                        tclk;
 wire                        tclk_n;
 wire                        trst_pad_in;
 wire                        jtag_shift_clk;
+ assign      aux_jtag_clk               = jtag_clk;
+ assign      aux_update_dr_clk_o        = update_dr_clk_o;
+ assign      aux_shiftcapture_dr_clk_o  = shiftcapture_dr_clk_o;
+ assign      aux_test_logic_reset_o     = test_logic_reset_o;
+ assign      aux_tdi_o                  = tdi_o;
+ assign      aux_capture_dr_o           = capture_dr_o;
+ assign      aux_shift_dr_o             = shift_dr_o;
+ assign      aux_update_dr_o            = update_dr_o;
 ////////////////////////////////////////////////////////////////
 cde_clock_gater
 clk_gater_jtag_shift_clk 
@@ -204,8 +221,8 @@ assign  chip_id_select  = ( instruction == CHIP_ID_ACCESS );
 // bypass anytime we are not doing a defined instructions, or if in clamp or bypass mode
 assign   bypass_select  = ( instruction == CLAMP ) || ( instruction == BYPASS );
 assign  shiftcapture_dr_clk_o     =  jtag_shift_clk;
-assign  select_o[0]               = ( instruction == RPC_ADD );
-assign  select_o[1]               = ( instruction == RPC_DATA );
+assign  select_o                  = ( instruction == RPC_ADD );
+assign  aux_select_o              = ( instruction == RPC_DATA );
 assign  bsr_select_o              = ( instruction == EXTEST ) || ( instruction == SAMPLE )       ;
 //**********************************************************
 //** Boundary scan control signals
@@ -245,9 +262,9 @@ always@(*)
      else
      if(chip_id_select)    next_tdo =  chip_id_tdo;
      else
-     if(select_o[0])         next_tdo =  tdo_i[0];
+     if(select_o)         next_tdo =  tdo_i;
      else
-     if(select_o[1])         next_tdo =  tdo_i[1];
+     if(aux_select_o)         next_tdo =  aux_tdo_i;
      else                  next_tdo =  1'b0;
   end
 reg tdo_pad_out_reg;

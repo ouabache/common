@@ -22,7 +22,6 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 
 
-
 </spirit:componentGenerators>
 
 
@@ -135,6 +134,9 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 <spirit:modelParameter><spirit:name>WIDTH</spirit:name><spirit:value>8</spirit:value></spirit:modelParameter>
 <spirit:modelParameter><spirit:name>SIZE</spirit:name><spirit:value>2</spirit:value></spirit:modelParameter>
 <spirit:modelParameter><spirit:name>WORDS</spirit:name><spirit:value>4</spirit:value></spirit:modelParameter>
+<spirit:modelParameter><spirit:name>WRITETHRU</spirit:name><spirit:value>0</spirit:value></spirit:modelParameter>
+<spirit:modelParameter><spirit:name>DEFAULT</spirit:name><spirit:value>8'hff</spirit:value></spirit:modelParameter>
+
 </spirit:modelParameters>
 
 <spirit:ports>

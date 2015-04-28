@@ -32,52 +32,14 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
      <socgen:configurations>
 
-          <socgen:configuration>
-            <socgen:name>mult_generic_tb</socgen:name>
-            <socgen:parameters>
-            <socgen:parameter><socgen:name>WIDTH</socgen:name><socgen:value>32</socgen:value></socgen:parameter>
-            <socgen:parameter><socgen:name>PERIOD</socgen:name><socgen:value>20</socgen:value></socgen:parameter>
-            <socgen:parameter><socgen:name>TIMEOUT</socgen:name><socgen:value>500000</socgen:value></socgen:parameter>  
-           </socgen:parameters>
-          </socgen:configuration>
-
-
-          <socgen:configuration>
-            <socgen:name>mult_serial_tb</socgen:name>
-            <socgen:parameters>
-            <socgen:parameter><socgen:name>WIDTH</socgen:name><socgen:value>32</socgen:value></socgen:parameter>
-            <socgen:parameter><socgen:name>PERIOD</socgen:name><socgen:value>20</socgen:value></socgen:parameter>
-            <socgen:parameter><socgen:name>TIMEOUT</socgen:name><socgen:value>500000</socgen:value></socgen:parameter>  
-           </socgen:parameters>
-          </socgen:configuration>
-
-          <socgen:configuration>
-            <socgen:name>mult_ord_r4_tb</socgen:name>
-            <socgen:parameters>
-            <socgen:parameter><socgen:name>WIDTH</socgen:name><socgen:value>32</socgen:value></socgen:parameter>
-            <socgen:parameter><socgen:name>PERIOD</socgen:name><socgen:value>20</socgen:value></socgen:parameter>
-            <socgen:parameter><socgen:name>TIMEOUT</socgen:name><socgen:value>500000</socgen:value></socgen:parameter>  
-           </socgen:parameters>
-          </socgen:configuration>
-
-
-
 
           <socgen:configuration>
             <socgen:name>default</socgen:name>
             <socgen:parameters>
-            <socgen:parameter><socgen:name>PERIOD</socgen:name><socgen:value>20</socgen:value></socgen:parameter>
-            <socgen:parameter><socgen:name>TIMEOUT</socgen:name><socgen:value>500000</socgen:value></socgen:parameter>  
+            <socgen:parameter><socgen:name>WIDTH</socgen:name><socgen:value>32</socgen:value></socgen:parameter>
            </socgen:parameters>
           </socgen:configuration>
 
-
-
-          <socgen:configuration>
-            <socgen:name>lint</socgen:name>
-            <socgen:parameters>
-           </socgen:parameters>
-          </socgen:configuration>
 
 
 
@@ -98,7 +60,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <socgen:variant>mult_generic_tb</socgen:variant>
 <socgen:version>generic_tb</socgen:version>
 <socgen:parameters>
-    <socgen:parameter><socgen:name>PERIOD</socgen:name><socgen:value>40</socgen:value></socgen:parameter>
+    <socgen:parameter><socgen:name>PERIOD</socgen:name><socgen:value>20</socgen:value></socgen:parameter>
     <socgen:parameter><socgen:name>TIMEOUT</socgen:name><socgen:value>100000</socgen:value></socgen:parameter>    
 </socgen:parameters>
 <socgen:code_coverage>
@@ -119,8 +81,8 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <socgen:variant>mult_serial_tb</socgen:variant>
 <socgen:version>serial_tb</socgen:version>  
 <socgen:parameters>
-    <socgen:parameter><socgen:name>PERIOD</socgen:name><socgen:value>40</socgen:value></socgen:parameter>
-    <socgen:parameter><socgen:name>TIMEOUT</socgen:name><socgen:value>100000</socgen:value></socgen:parameter>    
+    <socgen:parameter><socgen:name>PERIOD</socgen:name><socgen:value>20</socgen:value></socgen:parameter>
+    <socgen:parameter><socgen:name>TIMEOUT</socgen:name><socgen:value>500000</socgen:value></socgen:parameter>    
 </socgen:parameters>
 <socgen:code_coverage>
   <socgen:cover>
@@ -135,10 +97,10 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 <socgen:testbench>
 <socgen:variant>mult_ord_r4_tb</socgen:variant>
-<socgen:version>ord_r4_tb</socgen:version>  
+<socgen:version>ord_r4_tb</socgen:version>
 <socgen:parameters>
-    <socgen:parameter><socgen:name>PERIOD</socgen:name><socgen:value>40</socgen:value></socgen:parameter>
-    <socgen:parameter><socgen:name>TIMEOUT</socgen:name><socgen:value>100000</socgen:value></socgen:parameter>    
+    <socgen:parameter><socgen:name>PERIOD</socgen:name><socgen:value>20</socgen:value></socgen:parameter>
+    <socgen:parameter><socgen:name>TIMEOUT</socgen:name><socgen:value>500000</socgen:value></socgen:parameter>    
 </socgen:parameters>
 <socgen:code_coverage>
   <socgen:cover>
@@ -191,7 +153,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <socgen:lint>
 <socgen:name>generic</socgen:name>
 <socgen:variant>mult_generic_lint</socgen:variant>
-<socgen:configuration>lint</socgen:configuration>
 </socgen:lint>
 
 
@@ -199,13 +160,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <socgen:lint>
 <socgen:name>serial</socgen:name>
 <socgen:variant>mult_serial_lint</socgen:variant>
-<socgen:configuration>lint</socgen:configuration>
 </socgen:lint>
 
 <socgen:lint>
 <socgen:name>ord_r4</socgen:name>
 <socgen:variant>mult_ord_r4_lint</socgen:variant>
-<socgen:configuration>lint</socgen:configuration>
 </socgen:lint>
 
 

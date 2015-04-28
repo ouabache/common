@@ -75,7 +75,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:adHocConnection>
 <spirit:name>shiftcapture_dr_clk_o</spirit:name>
-<spirit:externalPortReference spirit:portRef="shiftcapture_dr_clk_o"/>
+<spirit:externalPortReference  spirit:portRef="shiftcapture_dr_clk_o"/>
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="shiftcapture_dr_clk" />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="shiftcapture_dr_clk" />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="shiftcapture_dr_clk" />
@@ -83,12 +83,9 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 
 
-
-
-
 <spirit:adHocConnection>
 <spirit:name>capture_dr_o</spirit:name>
-       <spirit:externalPortReference spirit:portRef="capture_dr_o"/>
+<spirit:externalPortReference  spirit:portRef="capture_dr_o"/>
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="capture_dr" />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="capture_dr" />
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="capture_dr" />
@@ -96,29 +93,15 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:adHocConnection>
 <spirit:name>select_o</spirit:name>
-<spirit:externalPortReference spirit:portRef="select_o" spirit:left="0" spirit:right="0"  />
+<spirit:externalPortReference  spirit:portRef="select_o"  />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="select" />
-</spirit:adHocConnection>
-
-
-<spirit:adHocConnection>
-<spirit:name>select_o</spirit:name>
-       <spirit:externalPortReference spirit:portRef="select_o" spirit:left="1" spirit:right="1" />
-<spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="select" />
-</spirit:adHocConnection>
-
-
-<spirit:adHocConnection>
-<spirit:name>bsr_select_o</spirit:name>
-       <spirit:externalPortReference spirit:portRef="bsr_select_o" />
-<spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="select" />
 </spirit:adHocConnection>
 
 
 
 <spirit:adHocConnection>
 <spirit:name>shift_dr_o</spirit:name>
-       <spirit:externalPortReference spirit:portRef="shift_dr_o"/>
+<spirit:externalPortReference  spirit:portRef="shift_dr_o"/>
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="shift_dr" />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="shift_dr" />
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="shift_dr" />
@@ -127,7 +110,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:adHocConnection>
 <spirit:name>tdi_o</spirit:name>
-       <spirit:externalPortReference spirit:portRef="tdi_o"/>
+<spirit:externalPortReference  spirit:portRef="tdi_o"/>
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="tdi" />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="tdi" />
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="tdi" />
@@ -135,27 +118,20 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:adHocConnection>
 <spirit:name>tdo_i</spirit:name>
-       <spirit:externalPortReference spirit:portRef="tdo_i" spirit:left="0" spirit:right="0" />
+<spirit:externalPortReference  spirit:portRef="tdo_i" />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="tdo" />
 </spirit:adHocConnection>
 
 <spirit:adHocConnection>
-<spirit:name>tdo_i</spirit:name>
-       <spirit:externalPortReference spirit:portRef="tdo_i" spirit:left="1" spirit:right="1" />
+<spirit:name>aux_tdo_i</spirit:name>
+<spirit:externalPortReference  spirit:portRef="aux_tdo_i" />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="tdo" />
 </spirit:adHocConnection>
-
-<spirit:adHocConnection>
-<spirit:name>bsr_tdo_i</spirit:name>
-       <spirit:externalPortReference spirit:portRef="bsr_tdo_i"  />
-<spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="tdo" />
-</spirit:adHocConnection>
-
 
 
 <spirit:adHocConnection>
 <spirit:name>test_logic_reset_o</spirit:name>
-       <spirit:externalPortReference spirit:portRef="test_logic_reset_o"/>
+<spirit:externalPortReference  spirit:portRef="test_logic_reset_o"/>
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="test_logic_reset" />
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="test_logic_reset" />
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="test_logic_reset" />
@@ -163,15 +139,46 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:adHocConnection>
 <spirit:name>update_dr_clk_o</spirit:name>
-       <spirit:externalPortReference spirit:portRef="update_dr_clk_o"/>
+<spirit:externalPortReference  spirit:portRef="update_dr_clk_o"/>
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="update_dr_clk" />
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="update_dr_clk" />
 </spirit:adHocConnection>
 
 
+
+
+
+
+
+<spirit:adHocConnection>
+<spirit:name>aux_select_o</spirit:name>
+<spirit:externalPortReference  spirit:portRef="aux_select_o"/>
+<spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="select" />
+</spirit:adHocConnection>
+
+
+<spirit:adHocConnection>
+<spirit:name>bsr_select_o</spirit:name>
+<spirit:externalPortReference  spirit:portRef="bsr_select_o" />
+<spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="select" />
+</spirit:adHocConnection>
+
+<spirit:adHocConnection>
+<spirit:name>bsr_tdo_i</spirit:name>
+<spirit:externalPortReference  spirit:portRef="bsr_tdo_i"  />
+<spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="tdo" />
+</spirit:adHocConnection>
+
+
+
+
+
+
+
+
 <spirit:adHocConnection>
 <spirit:name>rpc_1_wire</spirit:name>
-       <spirit:externalPortReference spirit:portRef="rpc_1_wire"  spirit:left="JTAG_USER1_WIDTH-1" spirit:right="0"           />
+<spirit:externalPortReference  spirit:portRef="rpc_1_wire"  spirit:left="JTAG_USER1_WIDTH-1" spirit:right="0"/>
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="capture_value" />
 <spirit:internalPortReference  spirit:componentRef="rpc_1" spirit:portRef="update_value" />
 </spirit:adHocConnection>
@@ -179,7 +186,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:adHocConnection>
 <spirit:name>rpc_2_wire</spirit:name>
-       <spirit:externalPortReference spirit:portRef="rpc_2_wire"  spirit:left="JTAG_USER2_WIDTH-1" spirit:right="0"       />
+<spirit:externalPortReference  spirit:portRef="rpc_2_wire"  spirit:left="JTAG_USER2_WIDTH-1" spirit:right="0"/>
 <spirit:internalPortReference  spirit:componentRef="rpc_2" spirit:portRef="capture_value" />
 </spirit:adHocConnection>
 
@@ -187,7 +194,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 <spirit:adHocConnection>
 <spirit:name>bsr_wire</spirit:name>
-       <spirit:externalPortReference spirit:portRef="bsr_wire"  spirit:left="31" spirit:right="0"       />
+<spirit:externalPortReference  spirit:portRef="bsr_wire"  spirit:left="31" spirit:right="0"/>
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="capture_value" />
 <spirit:internalPortReference  spirit:componentRef="bsr" spirit:portRef="update_value" />
 </spirit:adHocConnection>

@@ -22,7 +22,7 @@ refdes=wdata[7:0]
 C 4500 700  1 0  0 out_port_v.sym
 {
 T 5500 700 5  10 1 1 0 0 1 1 
-refdes=addr[ADDR_WIDTH-1:0]
+refdes=addr[addr_width-1:0]
 }
 C 4500 1100  1 0 0 out_port.sym
 {

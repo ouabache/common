@@ -47,7 +47,7 @@
    </li>  
  </ul>  
  </div>  
- <img style="width: 773px; height: 446px;" alt=""  src="../png/cde_jtag_tap_sym.png"><br>  
+ <img style="width: 723px; height: 614px;" alt=""  src="../png/cde_jtag_tap_sym.png"><br>  
  <b><br>  
  <h2><b><a name="Parameters"></a>Parameters<br></b></h2>  
  <b><br>  
@@ -60,12 +60,6 @@
       <td style="vertical-align: top;">default <br>      </td> 
       <td style="vertical-align: top;">Description<br></td> 
     </tr> 
-   <tr> 
-      <td style="vertical-align: top;">JTAG_SEL<br>      </td> 
-          <td style="vertical-align: top;">2<br>      </td> 
-          <td style="vertical-align: top;"><br></td> 
-         </tr> 
-
    <tr> 
       <td style="vertical-align: top;">INST_LENGTH<br>      </td> 
           <td style="vertical-align: top;">4<br>      </td> 
@@ -176,6 +170,54 @@
        <td style="vertical-align: top;">Description<br>      </td>  
      </tr>  
      <tr>  
+        <td style="vertical-align: top;">aux_capture_dr_o<br>      </td>  
+       <td style="vertical-align: top;">output<br>      </td>  
+       <td style="vertical-align: top;"><br>      </td>  
+     </tr>  
+
+     <tr>  
+        <td style="vertical-align: top;">aux_select_o<br>      </td>  
+       <td style="vertical-align: top;">output<br>      </td>  
+       <td style="vertical-align: top;"><br>      </td>  
+     </tr>  
+
+     <tr>  
+        <td style="vertical-align: top;">aux_shift_dr_o<br>      </td>  
+       <td style="vertical-align: top;">output<br>      </td>  
+       <td style="vertical-align: top;"><br>      </td>  
+     </tr>  
+
+     <tr>  
+        <td style="vertical-align: top;">aux_shiftcapture_dr_clk_o<br>      </td>  
+       <td style="vertical-align: top;">output<br>      </td>  
+       <td style="vertical-align: top;"><br>      </td>  
+     </tr>  
+
+     <tr>  
+        <td style="vertical-align: top;">aux_tdi_o<br>      </td>  
+       <td style="vertical-align: top;">output<br>      </td>  
+       <td style="vertical-align: top;"><br>      </td>  
+     </tr>  
+
+     <tr>  
+        <td style="vertical-align: top;">aux_tdo_i<br>      </td>  
+       <td style="vertical-align: top;">input<br>      </td>  
+       <td style="vertical-align: top;"><br>      </td>  
+     </tr>  
+
+     <tr>  
+        <td style="vertical-align: top;">aux_test_logic_reset_o<br>      </td>  
+       <td style="vertical-align: top;">output<br>      </td>  
+       <td style="vertical-align: top;"><br>      </td>  
+     </tr>  
+
+     <tr>  
+        <td style="vertical-align: top;">aux_update_dr_clk_o<br>      </td>  
+       <td style="vertical-align: top;">output<br>      </td>  
+       <td style="vertical-align: top;"><br>      </td>  
+     </tr>  
+
+     <tr>  
         <td style="vertical-align: top;">bsr_output_mode<br>      </td>  
        <td style="vertical-align: top;">output<br>      </td>  
        <td style="vertical-align: top;"><br>      </td>  
@@ -206,7 +248,7 @@
      </tr>  
 
      <tr>  
-        <td style="vertical-align: top;">select_o[JTAG_SEL-1:0 ]<br>      </td>  
+        <td style="vertical-align: top;">select_o<br>      </td>  
        <td style="vertical-align: top;">output<br>      </td>  
        <td style="vertical-align: top;"><br>      </td>  
      </tr>  
@@ -248,7 +290,7 @@
      </tr>  
 
      <tr>  
-        <td style="vertical-align: top;">tdo_i[JTAG_SEL-1:0 ]<br>      </td>  
+        <td style="vertical-align: top;">tdo_i<br>      </td>  
        <td style="vertical-align: top;">input<br>      </td>  
        <td style="vertical-align: top;"><br>      </td>  
      </tr>  
@@ -351,7 +393,7 @@
  <br>  
  <br>  
  <br>  
- <img style="width: 773px; height: 446px;" alt=""  src="../png/cde_jtag_tap_sch.png"><br>  
+ <img style="width: 723px; height: 614px;" alt=""  src="../png/cde_jtag_tap_sch.png"><br>  
  <b><br>  
  <br>  
  <br>  

@@ -42,8 +42,6 @@
 /**********************************************************************/
  module 
   or1200_dbg_model_def 
-    #( parameter 
-      OUT_WIDTH=10)
      (
     reg                 dbg_ewt_i,
     reg                 dbg_stall_i,
@@ -59,7 +57,6 @@
     wire    [ 31 :  0]        dbg_dat_o,
  input   wire                 clk,
  input   wire                 reset);
-////////////////////////////////////////////////////////////////
    reg [31:0]  exp_rdata;
    reg [31:0]  mask_rdata;
 always@(posedge clk)

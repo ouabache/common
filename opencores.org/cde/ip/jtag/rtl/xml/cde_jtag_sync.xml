@@ -170,9 +170,7 @@ http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009/index.xsd">
 
 
 
-<spirit:modelParameters>
-<spirit:modelParameter><spirit:name>JTAG_SEL</spirit:name><spirit:value>2</spirit:value></spirit:modelParameter>
-</spirit:modelParameters>
+
 
 <spirit:ports>
 

@@ -4,9 +4,7 @@ module mt45w8mw12_def
 #(
     parameter ADDR_BITS      = 23,   
     parameter DQ_BITS        = 16,
-    parameter MEM_BITS       = 16,
-    parameter INIT_FILE_E   = "NONE", 
-    parameter INIT_FILE_O   = "NONE" 
+    parameter MEM_BITS       = 16
 
   )
   

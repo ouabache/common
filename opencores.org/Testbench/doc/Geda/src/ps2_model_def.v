@@ -50,7 +50,34 @@
  inout   wire                 ps2_data,
  input   wire                 clk,
  input   wire                 reset);
-////////////////////////////////////////////////////////////////
+reg                        exp_device_rx_parity;
+reg                        mask_device_rx_parity;
+reg     [ 7 :  0]              exp_device_rx_data;
+reg     [ 7 :  0]              mask_device_rx_data;
+wire                        drv_device_rx_parity;
+wire                        prb_device_rx_parity;
+wire     [ 7 :  0]              drv_device_rx_data;
+wire     [ 7 :  0]              prb_device_rx_data;
+io_probe_def
+#( .MESG ("ps2 data receive  Error"),
+   .WIDTH (8))
+device_rx_data_tpb 
+   (
+    .clk      ( clk  ),
+    .drive_value      ( drv_device_rx_data[7:0] ),
+    .expected_value      ( exp_device_rx_data[7:0] ),
+    .mask      ( mask_device_rx_data[7:0] ),
+    .signal      ( prb_device_rx_data[7:0] ));
+io_probe_def
+#( .MESG ("ps2 parity receive  Error"),
+   .WIDTH (1))
+device_rx_parity_tpb 
+   (
+    .clk      ( clk  ),
+    .drive_value      ( drv_device_rx_parity  ),
+    .expected_value      ( exp_device_rx_parity  ),
+    .mask      ( mask_device_rx_parity  ),
+    .signal      ( prb_device_rx_parity  ));
 //********************************************************************
 //*** TAP Controller State Machine
 //********************************************************************
@@ -61,8 +88,6 @@ parameter RESET            = 2'b00,
           IDLE             = 2'b11;
 reg        device_rx_parity;
 reg [7:0]  device_rx_data;
-wire        prb_device_rx_parity;
-wire [7:0]  prb_device_rx_data;
 wire       device_rx_read;
 reg        ps2_data_out;
 reg        dev_host;
@@ -79,18 +104,17 @@ reg [7:0]  device_tx_data;
 reg        device_tx_parity; 
 reg        device_ack; 
 reg        device_stop; 
-reg [7:0]  exp_device_rx_data;
-reg [7:0]  mask_device_rx_data;
-reg        exp_device_rx_parity;
-reg        mask_device_rx_parity;
+assign    drv_device_rx_data   = 8'bzzzzzzzz;
 assign    prb_device_rx_parity = device_rx_parity;
 assign    prb_device_rx_data   = device_rx_data;
+assign    drv_device_rx_parity = 1'bz;
+/*
 io_probe_def 
 #(.MESG     ( "ps2 data receive error"),
   .WIDTH    ( 8))
 device_rx_data_tpb (
    .clk            (  clk                 ),
-   .drive_value    (8'bzzzzzzzz           ), 
+   .drive_value    (  drv_device_rx_data  ), 
    .expected_value (  exp_device_rx_data  ),
    .mask           (  mask_device_rx_data ), 
    .signal         (  prb_device_rx_data  )
@@ -99,11 +123,12 @@ io_probe_def
 #(.MESG     ( "ps2 parity receive error"))
 device_rx_parity_tpb (
    .clk            (  clk                   ),
-   .drive_value    (1'bz                    ), 
+   .drive_value    (  drv_device_rx_parity  ), 
    .expected_value (  exp_device_rx_parity  ),
    .mask           (  mask_device_rx_parity ), 
    .signal         (  prb_device_rx_parity  )
  );      
+*/   
 assign   ps2_clk  = clk_out ? 1'b0 : 1'bz  ;
 assign   ps2_data = ps2_data_out ? 1'b0 : 1'bz  ;
 always @(posedge clk  or posedge reset )
